@@ -1,377 +1,88 @@
-# Food and Feed Sampling Data Standard (Proposed)
-
+# Red Tractor Data Standard
 ### What Is This Document?
-
-This document describes the data standard for submitting food sampling results data to the Food Standards Agency. It describes the fields, their data types and order as well as providing specific guidance on acceptable values and which fields use specific reference data values.
-
+This document describes the data standard for Red Tractor to submitting membership data to the Food Standards Agency. It describes the fields, their data types and order as well as providing specific guidance on acceptable values and which fields use specific reference data values.
 This document does not describe the mechanism by which data can be submitted to the Food Standards Agency (the FSA).
-
 ### Who Is This Document For?
-
-This document is written for Local Authority and Laboratory users who need to submit sampling and results data to the FSA.
-
+This document is written for Red Tractor who need to submit membership data to the FSA.
 ### How This Document Is Structured
-
-- [Food Standard Overview](#food-standard-overview) Contains a brief overview of all the fields in the standard.  
+- [Red Tractor Data Overview](#red-tractor-data-overview) Contains a brief overview of all the fields in the standard.  
 - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
- 1. [Local Authority](#1-local-authority)  
- 2. [Sample Date](#2-sample-date-time) 
- 3. [Sample Identifier](#3-sample-identifier)
- 4. [Food or Feed](#4-food-or-feed)  
- 5. [Sample Category](#5-sample-identifier)  
- 6. [Sample of](#6-sample-of)   
- 7. [Premises Name](#7-premises-name)  
- 8. [Premises Postcode](#8-premises-postcode)  
- 9. [Premises Type](#9-premises-type)  
- 10. [Sample Reason](#10-sample-reason)  
- 11. [Sample Type](#11-sample-type)  
- 12. [Animal Feed Type](#12-animal-feed-type)  
- 13. [Follow Up Identifier](#13-follow-up-identifier)  
- 14. [Shelf Life Type](#14-shelf-life-type)  
- 15. [Durability Date](#15-durability-date)  
- 16. [Survey Identifier](#16-survey-identifier)  
- 17. [Manufacturer Name](#17-manufacturer-name)  
- 18. [Distributor Name](#18-distributor-name)  
- 19. [Importer Name](#19-importer-name)  
- 20. [Country of Origin](#20-country-of-origin)  
- 21. [LA Instructions](#21-la-instructions)  
- 22. [Laboratory](#22-laboratory)  
- 23. [Laboratory Comments](#23-laboratory-comments)  
- 24. [Determinand](#24-determinand)  
- 25. [Units](#25-units)  
- 26. [Result (Numeric)](#26-result-numeric)  
- 27. [Result (Text)](#27-result-text)  
- 28. [Satisfactory](#28-satisfactory)  
- 29. [Reported Date](#29-eported-date)   
- 30. [Result Fail Code](#30-result-fail-code) 
- 31. [Deviating Sample Comments](#31-deviating-sample-comments)
- 32. [Lab Identifier](#32-lab-identifier)
+ 1. [FSA Producer ID](#1-fsa-producer-id)
+ 2. [Site Name](#2-site-name)
+ 3. [Address](#3-address)
+ 4. [CPH Number](#4-cph-number)
+ 5. [Certificate End Date](#5-certificate-end-date)
+ 6. [Red Tractor Dairy Number](#8-red-tractor-dairy-number)
+ 7. [Last RT Dairy Inspection Date](#9-last-rt-dairy-inspection-date)
 - [Supported File Types](#supported-file-types)
 - [Other Requirements](#other-requirements)
 - [File Naming Conventions](#file-naming-conventions)
 
-## Food Standard Overview
-
+## Red Tractor Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
+
 
 Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
 ------|------------|-------------|-----------|----------|-----------------------|-------
-1|local_authority|Local Authority identifier|Text|No|Yes|LA
-2|sample_date_time|Date and time sample taken|Date|No|No|LA
-3|sample_id|Sample unique identifier|Text|No|No|LA
-4|food_or_feed|Food or Feed flag|Text|No|Yes|LA
-5|sample_category|Sample category reference|Text|No|Yes|LA
-6|sample_of|Free text food description|Text|Yes|No|LA
-6|sample_of|Free text food description|Text|Yes|No|LA
-7|premises_name|Name of the premises where the sample was taken|Text|No|No|LA
-8|premises_postcode|Post code of the premises where the sample was taken|Text|No|No|LA
-9|premises_type|Premises type reference|Text|No|Yes|LA
-10|sample_reason|The reason for sampling|Text|No|Yes|LA
-11|sample_type|The type of sample|Text|No|Yes|LA
-12|animal_feed_type|The type of feed|Text|Yes|Yes|LA
-13|follow_up_id|Original sample unique identifier|Text|Yes|No|LA
-14|shelf_life_type|Shelf life type reference|Text|No|Yes|LA
-15|durability_date|Durability date of the sample|Date|Yes|No|LA
-16|survey_id|Survey unique identifier|Text|Yes|No|LA
-17|manufacturer|Name of the manufacturer|Text|Yes|No|LA
-18|distributor|Name of the distributor|Text|Yes|No|LA
-19|importer|Name of the importer|Text|Yes|No|LA
-20|country|Country of origin|Text|Yes|Yes|LA
-21|la_instructions|Addtional instructions from Local Authority|Text|Yes|No|LA
-22|laboratory|Laboratory identifier|Text|No|Yes|LA
-23|laboratory_comments|Autorisor's opinion of the sample|Text|Yes|No|Lab
-24|determinand|Determinand identifier|Text|Yes|Yes|Lab
-25|units|Units used|Text|Yes|Yes|Lab
-26|result_numeric|Numerical value outcome of test|Text|No|No|Lab
-27|result_text|Text explanation of outcome of test|Text|Yes|No|Lab
-28|satisfactory|Shows if sample was satisfactory|Text|No|Yes|Lab
-29|reported_date|Date results were reported to the Local Authority|Date|No|No|Lab
-30|result_fail_code|The result fail code|Text|Yes|No|Lab
-31|deviating_sample_comments|If sample is in-line with FLCoP|Text|Yes|No|Lab
-32|lab_id|Sample unique identifier|Text|No|No|Lab
+1|fsa_producer_id|FSA producer unique identifier|Number|No|Yes|FSA
+2|site_name|Trading name of milk producer|Text|No|No|FSA
+3|address|Address of milk producer|Text|No|No|FSA
+4|cph_number|County parish holding number|Text|No|Yes|FSA
+5|certificate_end_date|End date of Red Tractor certificate of membership|Date|No|Yes|RT
+6|red_tractor_dairy_number|Red Tractor unique identifier|Text|No|Yes|RT
+7|last_rt_dairy_inspection_date|Date of last Red Tractor dairy inspection|Date|No|Yes|RT
 
 ## Field Definitions
 
-The field definitions include the field names generated by the legacy system when creating XML files to help users map from legacy outputs to the new standards. Please note that whilst fields are broadly equivalent, where controlled vocabularies or taxonomies have been used, it should not be assumed that acceptable values remain identical to their legacy versions.
+### 1. FSA Producer ID
+**Field Name:** ` fsa_producer_id`
+**Data Type:** `Number (controlled vocabulary)
+**Optional:** No
+**Source:** Food Standards Agency
+**Comments:** This is the numeric Food Standards Agency code to identify an establishment registered to produce milk. This must be a unique value.
 
-### 1. Local Authority
-**Field Name:** `local_authority`  
-**Legacy XML Field Name:**  `LocalAuthorityCode`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** This is the three character Local Authority code as listed in the Government Digital Service (GDS) register for [England](https://local-authority-eng.register.gov.uk/), [Northern Ireland](https://local-authority-nir.register.gov.uk/), and [Wales](https://principal-local-authority.register.gov.uk/) repsectively. It should be noted that the Northern Ireland register is currently only in discovery, but GDS have advised us that the three character code is unlikely to change.
+### 2. Site Name
+**Field Name:** `site_name`
+**Data Type:** Text (50 character limit)
+**Optional:** No
+**Source:** Food Standards Agency
+**Comments:** The trading name of the registered milk producer.
 
-### 2. Sample Date Time
-**Field Name:** `sample_date_time`  
-**Legacy XML Field Name:** `DateSampleTaken`  
-**Data Type:** Date (format: `YYYY-MM-DD hh:mm:ss`)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The date and time the sample was taken, this should follow the YYYY-MM-DD hh:mm:ss format as laid out in the International Standard ISO 8601.
+### 3. Address
+**Field Name:** `address`
+**Data Type:** Text (255 character limit)
+**Optional:** No
+**Source:** Food Standards Agency
+**Comments:** The address of the registered milk producer
 
-### 3. Sample Identifier
-**Field Name:** `sample_id`  
-**Legacy XML Field Name:** `LocalAuthoritySampleNumber`  
-**Data Type:** Text (32 character limit)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The sample number, as recorded by the sampling body. This must be a unique value within the records of that sampling body. It can be any combination of numeric or alphanumeric characters as long as it is unique.  
+### 4. CPH Number 
+**Field Name:** `cph_number`
+**Data Type:** Text (14 character limit)
+**Optional:** No
+**Source:** Food Standards Agency
+**Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the nn/nnn/nnnn/nn format.
 
-### 4. Food or Feed
-**Field Name:** `food_or_feed`  
-**Legacy XML Field Name:** `RecordType`  
-**Data Type:** Text (Between 0 and 10 characters) 
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The acceptable values for this field are:
- - `Food`
- - `Feed`
+### 5. Certificate End Date
+**Field Name:** `certificate_end_date`
+**Data Type:** Date (format: `YYYY-MM-DD`)
+**Optional:** No
+**Source:** Red Tractor
+**Comments:** The end date of the producer’s certificate of Red Tractor membership. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
 
-### 5. Sample Category
-**Field Name:** `sample_category`  
-**Legacy XML Field Name:** `SubCategory3Code`  
-**Data Type:** Text (controlled vocabulary, format: `00.00.00.00`)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The [sampling taxonomy](http://data.food.gov.uk/codes/enforcement-monitoring/sampling) defines the acceptable values for this field. The sample taxonomy is a hierarchy of sampling classification with four levels. They are organised as `Clan > Family > Group > Type`. Each item in each level is numbered, these values are concatenated into a single string with a `.` used to separate them. Because they have a strict hierarchical relationship the classification only needs to be reported at the type level (format `00.00.00.00`), the group, family and clan do not need to be supplied.  
+### 6. Red Tractor Dairy Number
+**Field Name:** `red_tractor_dairy_number`
+**Data Type:** Text (20 character limit)
+**Optional:** No
+**Source:** Red Tractor
+**Comments:** This is Red Tractor’s unique reference to identify a milk producer who is a current member. It can be any combination of numeric or alphanumeric characters as long as it is unique.  
 
-### 6. Food Description
-**Field Name:** `sample_of`  
-**Legacy XML Field Name:** `FoodDescription`  
-**Data Type:** Text (255 character limit)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** A free text description of the food being sampled. Where possible, the description should include the brand name as well as a short description of the type of product, e.g. "Mr Yum's Chocolate Digestives".  
+### 7. Last Red Tractor Dairy Inspection Date
+** Field Name:** ` last_rt_dairy_inspection_date`
+**Data Type:** Date (format: `YYYY-MM-DD`)
+**Optional:** No
+**Source:** Red Tractor
+**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
 
-### 7. Premises Name
-**Field Name:** `premises_name`  
-**Legacy XML Field Name:** `PremisesName`  
-**Data Type:** Text (50 character limit)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The name of the premises where the sample was taken. For premises that are one of many locations with the same business name, it is advisabel to include the street where that specific premises is located, e.g. Frank's Deli, High Street.  
-
-### 8. Premises Postcode
-**Field Name:** `premises_postcode`  
-**Legacy XML Field Name:** `BusinessPostcode`  
-**Data Type:** Text (Between 5 and 8 characters)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The postcode of the premises where the sample was taken.  
-
-### 9. Premises Type
-**Field Name:** `premises_type`  
-**Legacy XML Field Name:** `PremisesTypeCode`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The premises type as defined by the [Categories of Food Establishment Register](http://data.food.gov.uk/codes/business/establishment), the notation should be provided, for example a premises designated as a take-away has the notation `RC-TA`.  
-
-### 10. Sample Reason
-**Field Name:** `sample_reason`  
-**Legacy XML Field Name:** `ReasonForTakingSampleCode`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The acceptable values for this field are:
- - `Surveillance` or `S`
- - `Monitoring` or `M`
- - `Enforcement` or `E`
- - `Investigation` or `I`
-
-### 11. Sample Type
-**Field Name:** `sample_type`  
-**Legacy XML Field Name:** `SampleTypeCode`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The acceptable values for this field are:
- - `Formal` or `F`
- - `Informal` or `I`
- - `Complaint` or `C`
- 
-### 12. Animal Feed Type
-**Field Name:** `animal_feed_type`  
-**Legacy XML Field Name:** `Species`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** The type of animal feed as described in the [Register of Animal Feed Types](http://data.food.gov.uk/codes/enforcement-monitoring/sampling/_animal-feeds). All animal feed type codes follow the pattern `00.00`.
- 
-### 13. Follow Up Identifier
-**Field Name:** `follow_up_id`  
-**Legacy XML Field Name:** `FollowUpSampleReference`  
-**Data Type:** Text (32 character limit)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** The unique sample reference number for the original sample to which this is a follow up.
-
-### 14. Shelf life Type
-**Field Name:** `shelf_life_type`  
-**Legacy XML Field Name:** `DurabilityCode`  
-**Data Type:** Text (controlled vocabulary)   
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** Shelf life provided by the manufacturer/producer/FBO, The acceptable values for this field are:
- - `Use by` or `UB`
- - `Best Before` or `BB`
- - `Best Before End` or `BBE`
- - `Not Provided` or `NP`
- 
-### 15. Durability Date
-**Field Name:** `durability_date`  
-**Legacy XML Field Names:** `DurabilityYear` `DurabilityMonth` `DurabilityDay`  
-**Data Type:** Date (format: `YYYY-MM-DD`)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** The durability date of the sample, this should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
-
-### 16. Survey Identifier
-**Field Name:** `survey_id`  
-**Legacy XML Field Name:** `SurveyReference`  
-**Data Type:** Text (50 character limit)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** A unique reference to identify the survey under which this sample was taken. An entry in the fields indicates that this sample was taken as part of a survey, a null entry indicates that it was not.  
-
-### 17. Manufacturer Name
-**Field Name:** `manufacturer`  
-**Legacy XML Field Name:** `ManufacturerDescription`  
-**Data Type:** Text (255 character limit)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** The name of the manufacturer of the sampled product.  
-
-### 18. Distributor Name
-**Field Name:** `distributor`  
-**Legacy XML Field Name:** `DistributerDescription`  
-**Data Type:** Text (255 character limit)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** The name of the distributor of the sampled product.  
-
-### 19. Importer Name
-**Field Name:** `importer`  
-**Legacy XML Field Name:** `ImporterDescription`  
-**Data Type:** Text (255 character limit)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** The name of the importer of the sampled product.  
-
-### 20. Country of Origin
-**Field Name:** `country`  
-**Legacy XML Field Name:** `CountryCode`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** Yes  
-**Source:** Local Authority  
-**Comments:** The country of origin. The field `country` from the [GDS Country Register](https://country.register.gov.uk/records) must be used. This is a two character ISO 3166 alpha 2 code.  
-
-### 21. LA Instructions
-**Field Name:** `la_instructions`  
-**Legacy XML Field Name:** `RoutineComments`  
-**Data Type:** Text (2000 character limit)  
-**Optional:** Yes  
-**Source:** Local Authority   
-**Comments:** This free text field shows any Local Authority's supplementary instructions.  
-
-### 22. Laboratory
-**Field Name:** `laboratory`  
-**Legacy XML Field Name:** `TestingLaboratoryCode`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** No  
-**Source:** Local Authority  
-**Comments:** The code representing the laboratory completing the testing on the sample. The notation for each lab can be found in the [approved laboratories register](http://data.food.gov.uk/codes/controlled-establishments/laboratories/_approved-laboratory).  
-
-### 23. Laboratory Comments
-**Field Name:** `lab_comments`  
-**Legacy XML Field Name:** `LaboratoryComments`  
-**Data Type:** Text (2000 character limit)  
-**Optional:** Yes  
-**Source:** Laboratory  
-**Comments:** This free text field shows the authoriser's opinion of the sample.  
-
-### 24. Determinand
-**Field Name:** `determinand`  
-**Legacy XML Field Name:** `Determination`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** Yes  
-**Source:** Laboratory  
-**Comments:** Describes the exact test completed on the sample. The [determinands taxonomy](www.data.food.gov.uk/codes) contains this information. It is heirarchical and has four levels, there are three acceptable formats for this field. For example, for a test for Tartrazine we will accept either;
-
- - The short notation for the test only, i.e. `CE102`  
- 
- - The short notation including the unit suffix, i.e. `CE102-08` for Tartrazine tested on a mg/L basis.  
- 
- - The long name for the test, enclosed in square brackets, i.e. `[Tartrazine]`. This final format should be used only when there is no short notation available. When using this format you should only use the units field to describe the units.
-
-### 25. Units
-**Field Name:** `units`  
-**Legacy XML Field Name:** `TestUnits`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** Yes  
-**Source:** Laboratory  
-**Comments:** Describes the units used in the results / test completed on the sample.   e.g. '%', 'g/100g', 'cfu per gram', 'mg/kg', 'g/100g' etc.
-
-### 26. Result (Numeric)
-**Field Name:** `result_numeric`  
-**Legacy XML Field Name:** `Result`  
-**Data Type:** Text (255 character limit)  
-**Optional:** Yes  
-**Source:** Laboratory  
-**Comments:** The result of the test completed on the sample, where the result is numerical, e.g. `1.4`  
-
-### 27. Result (Text)
-**Field Name:** `result_text`  
-**Legacy XML Field Name:** `TextResult`  
-**Data Type:** Text (255 character limit)  
-**Optional:** Yes  
-**Source:** Laboratory  
-**Comments:** The result of the test completed on the sample, where the result cannot be expressed numerically, e.g. `<1.4` or `less than one`  
-
-### 28. Satisfactory
-**Field Name:** `satisfactory`  
-**Legacy XML Field Name:** `IsSatisfactory`  
-**Data Type:** Text (controlled vocabulary)  
-**Optional:** No  
-**Source:** Laboratory  
-**Comments:** Indicates whether a sample is deemed satisfactory for a specific test. The acceptable values are:
- - `Satisfactory` or `S`
- - `Unsatisfactory` or `U`
- - `Borderline` or `B`  
- - `Potential injurious to health / unfit for human consumption` or `P` 
-
-### 29. Reported Date
-**Field Name:** `report_date`  
-**Legacy XML Field Name:** `ResultTimeStamp`  
-**Data Type:** Date (format: `YYYY-MM-DD`)  
-**Optional:** No  
-**Source:** Laboratory  
-**Comments:** The date the results were reported, this should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
-
-### 30. Result Fail Code
-**Field Name:** `result_fail_code`  
-**Legacy XML Field Name:** `FailCode`  
-**Data Type:** Test (255 character limit)  
-**Optional:** Yes  
-**Source:** Laboratory  
-**Comments:** This is the outcome failcode for the test applied. This captures the judgement on the result by the approver.  
-
-### 31. Deviating Sample Comments
-**Field Name:** `deviating_sample_comments`  
-**Legacy XML Field Name:** `SampComments`  
-**Data Type:** Test (255 character limit)  
-**Optional:** Yes  
-**Source:** Laboratory  
-**Comments:** To record if the sample isn’t in line with the FLCoP or if temperature control requirements were not met.  
-
-### 32. Lab Identifier
-**Field Name:** `lab_id`  
-**Legacy XML Field Name:** `LIMSSampleNumber`  
-**Data Type:** Text (32 character limit)  
-**Optional:** No  
-**Source:** Laboratory  
-**Comments:** The sample number, as recorded by the lab. This must be a unique value within the records of that lab. It can be any combination of numeric or alphanumeric characters as long as it is unique.  
 
 ## Supported File Types
 
@@ -393,6 +104,6 @@ Where possible please use `UTF-8` encoding.
 
 ## File Naming Conventions
 
-In order to make it easy for us to manage the files longer term, it will be important to name files so that we can tell who has submitted them and the time period that each file covers. The format will be the laboratory code from the laboratories register, and the date and time of submission in `YYYYMMDD-HHMMSS` format.
+In order to make it easy for us to manage the files longer term, it will be important to name files so that we can tell the time period that each file covers. The format will be RT and the date and time of submission in `YYYYMMDD-HHMMSS` format.
 
-For example, the file from the laboratory with code `LAB10` for sampling data submitted the 31st of January 2017 15:20:33 would be named `LAB1020170131-152033.csv`.
+For example, the file submitted the 31st of January 2017 15:20:33 would be named `RT20170131-152033.csv`.
