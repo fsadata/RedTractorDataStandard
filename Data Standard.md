@@ -36,52 +36,52 @@ Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary 
 
 ### 1. FSA Producer ID
 **Field Name:** ` fsa_producer_id`  
-**Data Type:** `Number (controlled vocabulary)
-**Optional:** No
-**Source:** Food Standards Agency
-**Comments:** This is the numeric Food Standards Agency code to identify an establishment registered to produce milk. This must be a unique value.
+**Data Type:** `Number (controlled vocabulary)  
+**Optional:** No  
+**Source:** Food Standards Agency  
+**Comments:** This is the numeric Food Standards Agency code to identify an establishment registered to produce milk. This must be a unique value.  
 
 ### 2. Site Name
-**Field Name:** `site_name`
-**Data Type:** Text (50 character limit)
-**Optional:** No
-**Source:** Food Standards Agency
-**Comments:** The trading name of the registered milk producer.
+**Field Name:** `site_name`  
+**Data Type:** Text (50 character limit)  
+**Optional:** No  
+**Source:** Food Standards Agency  
+**Comments:** The trading name of the registered milk producer.  
 
 ### 3. Address
-**Field Name:** `address`
-**Data Type:** Text (255 character limit)
-**Optional:** No
-**Source:** Food Standards Agency
-**Comments:** The address of the registered milk producer
+**Field Name:** `address`  
+**Data Type:** Text (255 character limit)  
+**Optional:** No  
+**Source:** Food Standards Agency  
+**Comments:** The address of the registered milk producer  
 
 ### 4. CPH Number 
-**Field Name:** `cph_number`
-**Data Type:** Text (14 character limit)
-**Optional:** No
-**Source:** Food Standards Agency
-**Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the nn/nnn/nnnn/nn format.
+**Field Name:** `cph_number`  
+**Data Type:** Text (14 character limit)  
+**Optional:** No  
+**Source:** Food Standards Agency  
+**Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the nn/nnn/nnnn/nn format.  
 
 ### 5. Certificate End Date
-**Field Name:** `certificate_end_date`
-**Data Type:** Date (format: `YYYY-MM-DD`)
-**Optional:** No
-**Source:** Red Tractor
-**Comments:** The end date of the producer’s certificate of Red Tractor membership. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+**Field Name:** `certificate_end_date`  
+**Data Type:** Date (format: `YYYY-MM-DD`)  
+**Optional:** No  
+**Source:** Red Tractor  
+**Comments:** The end date of the producer’s certificate of Red Tractor membership. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
 
 ### 6. Red Tractor Dairy Number
-**Field Name:** `red_tractor_dairy_number`
-**Data Type:** Text (20 character limit)
-**Optional:** No
-**Source:** Red Tractor
-**Comments:** This is Red Tractor’s unique reference to identify a milk producer who is a current member. It can be any combination of numeric or alphanumeric characters as long as it is unique.  
+**Field Name:** `red_tractor_dairy_number`  
+**Data Type:** Text (20 character limit)  
+**Optional:** No  
+**Source:** Red Tractor  
+**Comments:** This is Red Tractor’s unique reference to identify a milk producer who is a current member. It can be any combination of numeric or alphanumeric characters as long as it is unique.    
 
 ### 7. Last Red Tractor Dairy Inspection Date
-** Field Name:** ` last_rt_dairy_inspection_date`
-**Data Type:** Date (format: `YYYY-MM-DD`)
-**Optional:** No
-**Source:** Red Tractor
-**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+** Field Name:** ` last_rt_dairy_inspection_date`  
+**Data Type:** Date (format: `YYYY-MM-DD`)  
+**Optional:** No  
+**Source:** Red Tractor  
+**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
 
 
 ## Supported File Types
