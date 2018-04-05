@@ -35,7 +35,7 @@ Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary 
 ## Field Definitions
 
 ### 1. FSA Producer ID
-**Field Name:** ` fsa_producer_id`
+**Field Name:** ` fsa_producer_id`  
 **Data Type:** `Number (controlled vocabulary)
 **Optional:** No
 **Source:** Food Standards Agency
