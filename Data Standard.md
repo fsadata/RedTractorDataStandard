@@ -76,8 +76,8 @@ Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary 
 **Source:** Red Tractor  
 **Comments:** This is Red Tractor’s unique reference to identify a milk producer who is a current member. It can be any combination of numeric or alphanumeric characters as long as it is unique.    
 
-### 7. Last Red Tractor Dairy Inspection Date
-** Field Name:** `last_rt_dairy_inspection_date`  
+### 7. Last Red Tractor Dairy Inspection Date  
+**Field Name:** `last_rt_dairy_inspection_date`  
 **Data Type:** Date (format: `YYYY-MM-DD`)  
 **Optional:** No  
 **Source:** Red Tractor  
