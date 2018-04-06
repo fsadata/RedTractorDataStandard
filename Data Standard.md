@@ -36,7 +36,7 @@ Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary 
 
 ### 1. FSA Producer ID
 **Field Name:** ` fsa_producer_id`  
-**Data Type:** `Number (controlled vocabulary)  
+**Data Type:** Number (controlled vocabulary)  
 **Optional:** No  
 **Source:** Food Standards Agency  
 **Comments:** This is the numeric Food Standards Agency code to identify an establishment registered to produce milk. This must be a unique value.  
@@ -60,7 +60,7 @@ Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary 
 **Data Type:** Text (14 character limit)  
 **Optional:** No  
 **Source:** Food Standards Agency  
-**Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the nn/nnn/nnnn/nn format.  
+**Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the format `nn/nnn/nnnn/nn`.  
 
 ### 5. Certificate End Date
 **Field Name:** `certificate_end_date`  
