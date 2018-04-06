@@ -53,7 +53,7 @@ Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary 
 **Data Type:** Text (255 character limit)  
 **Optional:** No  
 **Source:** Food Standards Agency  
-**Comments:** The address of the registered milk producer  
+**Comments:** The address of the registered milk producer. Each line of the address should be spererated by a comma with the final entry being the establishment's post code.   
 
 ### 4. CPH Number 
 **Field Name:** `cph_number`  
